@@ -1,0 +1,206 @@
+body,ul,li,p{
+    margin: 0;padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background: url('../source/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+.wrapper{
+    /* background: #ccc; */
+    height: 80%;
+    display: flex;
+}
+.listbox{
+    width: 20%;
+    background: rgba(0,0,0,0.4);
+}
+.listbox p{
+    width: 100%;
+    padding: 25px 0;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+}
+.listbox .songlist{
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    overflow: hidden;
+
+}
+.listbox .songlist li{
+    width: 100%;
+    height: 25px;
+    padding: 10px 5px;
+    border: 2px solid #000;
+    list-style: none;
+    line-height: 25px;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* 不换行  */
+    cursor: pointer;
+}
+.musicbox{
+    width: 80%;
+    min-width: 450px;
+    margin: 0 auto;
+    background: rgba(0,0,0,0.3)
+    
+}
+.main{
+    width: 100%;
+    text-align: center;
+}
+.main img{
+    width: 200px;
+    height: 200px;
+    border: 50px solid rgba(119,136, 139, 0.4);
+    border-radius: 50%;
+}
+
+.controls{
+    position: relative;
+    width: 580px;
+    height: 60px;
+    background:rgba(0,0,0,0.5);
+    margin: 0 auto;
+    margin-top: 100px;
+    border-radius: 10px;
+}
+.pre,.play,.next,.progress,.volume{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer; 
+}
+.pre{
+    left: 10px;}
+.play{
+    left: 53px;
+    }
+.next{
+    left: 98px;
+}
+.progress{
+    left: 140px;
+    width: 380px;
+    height: 30px;
+}
+.current-time,.alltime{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+    font-size: 16px;
+    font-weight: 200;
+}
+.current-time{
+    float: left;
+    margin: 0 5px;
+}
+.alltime{
+   float: right;
+   margin: 0 5px;
+}
+/* 进度条 */
+.pro-box{
+    position: absolute;
+    display:inline-block;
+    width: 260px;
+    height: 2px;
+    left: 50px;
+    top: 50%;
+    margin-top: -1px;
+    margin-left: 6px;
+    cursor: pointer;
+
+}
+.pro-bg{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    margin-top: -1px;
+    background: #000;
+}
+.pro-active{
+    position: absolute;
+    
+    z-index: 10;
+    width: 10px;
+    height: 2px;
+    background: #fff;
+   
+}
+.pro-active .radio-box{
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    margin-top: -10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+.radio{
+    position: absolute;
+    width: 8px ;
+    height: 8px;
+    left: 50%;
+    margin-left: -4px;
+    top: 50%;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 3px 3px rgb(24, 10, 219);
+    display: inline-block;
+
+}
+.volume{
+    right: 12px;
+}
+.volume-box{
+    position: absolute;
+    right: 15px;
+    bottom: 60px;
+    width: 22px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 0;
+    border: none;
+    transition: border 0.1s ease-in, height 0.15s ease;
+    cursor: pointer;
+
+}
+.volume-box .volume-bar{
+    position: absolute;
+    bottom: 0;
+    width: 22px;
+    height: 75px;
+    background: rgb(255, 255, 255);
+
+}
+/* 音量拖动位置 */
+.volume-box .volume-bar .bar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    width: 22px;
+    height: 22px;
+    overflow: hidden;
+    cursor: pointer;
+
+}

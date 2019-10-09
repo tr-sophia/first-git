@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=canvas, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        canvas{
+            /* background-image: url('./jiang.jpg'); */
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="400" height="400" id="myCanvas"></canvas>
+    <script>
+        var myCanvas = document.getElementById('myCanvas');
+        var ctx = myCanvas.getContext('2d');
+        var w =myCanvas.width;
+        var h =myCanvas.height;
+        var lastPos = {};//断点
+
+        // var img = new Image();
+        // img.src = './jiang.jpg';
+        // img.onload = function(){
+            // var bg = ctx.createPattern(img,'no-repeat');
+            // ctx.fillStyle= bg;
+            // ctx.fillRect(0,0,w,h);
+         
+
+         //入口函数
+         function init(){
+            var img= new Image();//保证背景图加载完成才可擦除
+
+             //随机数
+            var  random=Math.random();
+            if(random < 0.3){
+                img.src='./jiang.jpg';
+                // myCanvas.style.backgroundImage = 'url(jiang.jpg)';
+            }else{
+                img.src='./no.png';
+            // myCanvas.style.backgroundImage = 'url(no.png)';
+            }
+
+            img.onload = function(){
+                myCanvas.style.backgroundImage = 'url('+ img.src +')';//变量
+           
+            //鼠标按下
+                myCanvas.addEventListener('mousedown',downFun);
+
+            }
+            //蒙层
+            ctx.beginPath();
+            ctx.fillStyle= '#aaa';
+            ctx.fillRect(0,0,w,h);  
+            ctx.globalCompositeOperation = 'destination-out';   
+        }
+        init();
+       
+        function downFun(e){
+            lastPos.x=e.clientX-myCanvas.offsetLeft;
+            lastPos.y=e.clientY-myCanvas.offsetTop;
+
+            ctx.beginPath();
+            ctx.arc(lastPos.x,lastPos.y,20,0,Math.PI*2);
+            ctx.closePath();
+            ctx.fill();
+          
+            myCanvas.addEventListener('mousemove',moveFun);
+            document.body.addEventListener('mouseup',upFun);
+        }
+        function moveFun(e){
+            var x = e.clientX - myCanvas.offsetLeft;
+            var y = e.clientY - myCanvas.offsetTop;
+
+            ctx.beginPath();
+            ctx.moveTo(lastPos.x, lastPos.y);
+            ctx.lineTo(x, y);    //断点相连
+            ctx.lineWidth= 40;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+
+            lastPos.x = x;
+            lastPos.y = y;
+
+        }
+        function upFun(){
+            myCanvas.removeEventListener('mousemove',moveFun);
+            document.body.removeEventListener('mouseup',upFun);
+            clearCover();
+        }
+        //rgba 中的a（透明度）  超过百分之七十全部擦除
+        function clearCover(){
+            var imageData = ctx.getImageData(0,0,w,h);
+            var sum= 0;
+            for(var i=0; i< imageData.data.length;i+=4){
+                if(imageData.data[i] == 0){
+                    sum++;
+                }
+            }
+            if(sum > w*h*0.7){
+                ctx.clearRect(0,0,w,h);
+            }
+        }
+
+          
+           //擦除
+            // ctx.globalCompositeOperation = 'destination-out';
+            // ctx.beginPath();
+            // ctx.arc(100,100,100,0,Math.PI*2);
+            // ctx.fill();
+
+
+        // }//新像素会把旧像素全部擦除掉，包括蒙层和下方的image图案
+        //设置背景图片，不在canvas内，不会被擦出
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+.masthead{
+    position: relative;
+    text-align: center;
+    background:linear-gradient(45deg,#020031,#6d3353);
+    padding:60px 0 80px;
+    
+
+}
+.jumbotron .container{
+    max-width:100%;
+    z-index: 10;
+    position: relative;
+
+}
+.masthead:after{ 
+    content: '';
+    position: absolute;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left:0;
+    background-image: url('./bs-docs-masthead-pattern.png');
+    background-position: center;
+    opacity: 0.5;
+}
+.masthead h1,.masthead p{
+    color: #fff;
+}
+.masthead h1{
+    font-size: 100px;
+    font-weight: 700;
+}
+.masthead ul li{
+    list-style:none;
+}
+.masthead ul li a{
+    color: rgba(255, 255 ,255, 0.5);
+}
+
+
+
+
+.bc-social{
+    margin: -30px 0;
+    padding:15px 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #ddd;
+}
+.bc-social-buttons .span{
+    margin: 0 10px;
+    color: #ccc;
+}
+.bc-social-buttons li{
+    display: inline-block; 
+    list-style: none;
+}
+.bc-social-buttons li a{
+    color: #555;
+}
+.bc-social-buttons li a span{
+    display: inline-block;
+}
+.social-weibo :hover{
+   color: red;
+}
+
+
+
+.projects{
+    margin-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.container .projects-header{
+    display:block;
+    width: 60%;
+    text-align: center;
+    font-weight: 200;
+    margin: 60px auto 40px;
+}
+
+.page-header{
+    padding-bottom:10px;
+    margin: 40px 0 20px;
+    border-bottom: 1px solid #eee;
+}
+.page-header p{
+    margin: 0 0 10px;
+} 
+
+
+
+.row ::before{
+    content: "";
+    display: table;
+}
+
+.row{
+    margin-right:-15px;
+    margin-left:-15px;
+}
+.col-lg-3 .col-md-4 .col-sm-6{
+    height: 60px;
+    float: left;
+    box-sizing:border-box;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.projects .thumbnail{
+    
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    max-width: 310px;
+    margin-bottom: 30px;
+    border-radius: 0;
+}
+.thumbnail{
+    padding: 4px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.footer .footer a{
+    color: #777;
+}
+.footer{
+    margin:70px 0 ;
+    padding: 30px 0;
+    border-top: 1px solid #e5e5e5;
+}
+.col-md-6 h4{
+    margin: 10px 0;
+}
+
+img{
+    vertical-align: middle;
+}  
+.col-md-6 p{
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+.footer-top .about>div{
+   margin-bottom: 10px;
+
+}
+.footer-top .about>div h4{
+    color: #563d7c;
+    font-size: 16px;
+}
+.footer,.footer a{
+    color: #777;
+}
+
+hr{
+    margin: 20px 0;
+    border:0;
+    
+    border-top:1px solid #eee;
+}
+
+.footer-bottom{
+    font-size: 13px;
+}
+.list-inline{
+    padding-left: 0;
+    margin-left: -5px;
+    margin-bottom: 10px;
+    list-style: none;
+    text-align: center;
+}
+.footer-bottom ul>li{
+    padding: 0;
+}
+.list-inline>li{
+    display: inline-block;
+}
+.footer-bottom ul>li ::after{
+    content: "|";
+    color: #ccc;
+    padding: 0 10px;
+}
+
+
+iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+@font-face {
+    font-family: 'iconfont';
+    src: url('iconfont.eot');
+    src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+        url('iconfont.woff2') format('woff2'),
+        url('iconfont.woff') format('woff'),
+        url('iconfont.ttf') format('truetype'),
+        url('iconfont.svg#iconfont') format('svg');
+  }
+
+
+@media screen and (min-width:768px){
+    .masthead{
+        padding: 90px 0 110px;
+    }
+    .masthead h1{
+        font-size: 90px;
+    }
+    .projects-header h2{
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+    .col-sm-6{
+        width: 50%;
+        float: left;
+        margin-bottom: 30px;
+
+    }
+   
+}
+@media screen and (min-width:992px){
+    .col-md-4{
+       
+        float: left;
+        margin-bottom: 30px;
+    }
+}
+@media screen and (min-width:1200px){
+    .col-lg-3{
+        width: 25%;
+        float: left;
+        margin-bottom: 30px;
+    }
+}   

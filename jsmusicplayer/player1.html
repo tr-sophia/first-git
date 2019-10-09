@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/player1.css">
+    <link rel="stylesheet" href="./css/iconfont.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="listbox">
+            <p>播放列表</p>
+            <ul class="songlist">
+                <li >小半-陈粒</li>
+                <li >飞云之下-韩红 林俊杰</li>
+                <li >光年之外-邓紫棋</li>
+                <li >桃花笑-汪睿</li>
+                <li >漫步人生路-邓丽君</li>
+                
+            </ul>
+        </div>
+        <div class="musicbox">
+            <main class="main">
+                <img id= 'image'src="./source/小半-陈粒.jpg" alt="">
+                <audio id="audio" src="./source/小半-陈粒.mp3"></audio>
+            
+            </main>
+            <div class="controls">
+                <div class="pre">
+                    <i class="iconfont">&#xe603;</i>
+                </div>
+                <div class="play">
+                        <i class="iconfont">&#xe630;</i>
+                </div>
+                <div class="next">
+                        <i class="iconfont">&#xe602;</i>
+                </div>
+                <div class="progress">
+                    <div class="current-time">00:00</div>
+                    <div class="pro-box"> 
+                        <div class="pro-bg"></div>
+                        <div class="pro-active">
+                            <div class="radio-box">
+                                <span class="radio"></span>
+                            </div>
+                        </div>
+                    </div> 
+               
+                    <div class="alltime">00:00</div>
+                </div>
+                <div class="volume">
+                    <i class="iconfont">&#xe662;</i>
+                </div> 
+                <div class="volume-box">
+                    <div class="volume-bar">
+                        <span class="bar"></span>
+                    </div>   
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="./js/player1.js"></script>
+</body>
+</html>
